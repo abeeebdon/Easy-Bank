@@ -29,12 +29,15 @@ const Headers = (props: Props) => {
             />
           )}
         </div>
-        <div className="hidden md:flex">
+        <div className="hidden text-black gap-4  sm:flex">
           <Link href="/">Home</Link>
           <Link href="/">About</Link>
           <Link href="/">Contact</Link>
           <Link href="/">Blog</Link>
           <Link href="/">Careers</Link>
+        </div>
+        <div className="hidden md:block bg-blue-200 px-4 py-2">
+          <button>Contact us</button>
         </div>
       </article>
     </header>
