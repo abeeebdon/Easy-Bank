@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Section1 = () => {
   return (
-    <div className=" relative">
+    <div className=" ">
       <section className="w-full max-w-[1200px] mx-auto mt-[80px]  flex flex-col-reverse gap-6 sm:flex-row justify-between sm:items-center my-4">
         <article className=" basis-1/2 px-4 w-full max-w-[400px]">
           <h2 className="text-dBlue text-5xl">
@@ -29,16 +29,16 @@ const Section1 = () => {
         </div>
       </section>
       <section className="absolute top-[85%] bottom-10 bg-light-gray-blue w-full  h-full">
-        <article className="w-full pt-[100px] max-w-[1200px] mx-auto">
+        <article className="w-full py-[100px] max-w-[1200px] mx-auto">
           <div>
             <h2 className="text-dBlue text-2xl">Why choose EasyBank?</h2>
-            <p className="text-grayish-blue my-4">
+            <p className="text-grayish-blue mt-4">
               We leverage open banking to turn your bank account into financial
               hub. <br />
               Control your finances like never before
             </p>
           </div>
-          <article className="flex items-center mt-6 gap-4">
+          <article className="flex items-center mt-10 gap-4">
             {whyChooseUs.map((data) => {
               return (
                 <div className="flex flex-col gap-4" key={data.id}>
@@ -57,18 +57,31 @@ const Section1 = () => {
         </article>
 
         <div className="text-center mt-10 bg-very-light-gray">
-          <article>
-            {latestArticles.map((data) => {
-              return (
-                <div key={data.id}>
-                  <div className="w-full max-w-[200px] h-[150px] relative mx-auto">
-                    <Image src={data.src} fill alt={data.heading} />
+          <article className="w-full max-w-[1200px] mx-auto py-20">
+            <h2 className="text-dBlue text-2xl text-left ">Latest Articles</h2>
+            <div className="flex  mt-6 gap-4 justify-between">
+              {latestArticles.map((data) => {
+                return (
+                  <div
+                    key={data.id}
+                    className="w-full max-w-[270px] shadow bg-white text-left"
+                  >
+                    <Image
+                      src={data.src}
+                      width={100}
+                      height={100}
+                      className="w-full h-[170px]"
+                      alt={data.heading}
+                    />
+                    <div className="p-2 mt-2">
+                      <p className="text-grayish-blue">{data.author}</p>
+                      <h2 className="text-dBlue my-2">{data.heading}</h2>
+                      <p className="text-grayish-blue">{data.content}</p>
+                    </div>
                   </div>
-                  <h2>{data.heading}</h2>
-                  <p>{data.content}</p>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </article>
         </div>
       </section>
