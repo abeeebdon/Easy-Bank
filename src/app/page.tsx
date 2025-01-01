@@ -10,7 +10,7 @@ export default function Home() {
   const [showNav, setShowNav] = useState<boolean>(false)
 
   return (
-    <main className="relative bg-blue-200">
+    <main className="relative bg-very-light-gray">
       <Header setShowNav={setShowNav} showNav={showNav} />
       {showNav && (
         <article className="fixed inset-0 top-[10%] h-fit p-4 md:hidden ">
@@ -24,7 +24,7 @@ export default function Home() {
         </article>
       )}
       <Section1 />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }
