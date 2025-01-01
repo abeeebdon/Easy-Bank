@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaBars, FaTimes } from 'react-icons/fa'
 type Props = {
   showNav: boolean
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>
@@ -7,27 +8,17 @@ type Props = {
 const Headers = (props: Props) => {
   const { showNav, setShowNav } = props
   return (
-    <header className="bg-white p-4">
-      <article className="flex justify-between items-center">
+    <header className="bg-white p-4 py-6 flex justify-center">
+      <article className="w-full max-w-[1200px] flex justify-between items-center">
         <div>
-          <Image src="/images/logo.svg" width={100} height={100} alt="logo" />
+          <Image src="/images/logo.svg" width={170} height={100} alt="logo" />
         </div>
-        <div className="sm:hidden" onClick={() => setShowNav(!showNav)}>
-          {showNav ? (
-            <Image
-              src="/images/icon-close.svg"
-              width={25}
-              height={25}
-              alt="logo"
-            />
-          ) : (
-            <Image
-              src="/images/icon-hamburger.svg"
-              width={40}
-              height={40}
-              alt="logo"
-            />
-          )}
+        <div
+          className="sm:hidden text-lg text-black"
+          onClick={() => setShowNav((prev) => !prev)}
+        >
+          {showNav ? <FaTimes /> : <FaBars />}
+          {/* icons to toggle the navigation */}
         </div>
         <div className="hidden text-black gap-4  sm:flex">
           <Link href="/">Home</Link>
